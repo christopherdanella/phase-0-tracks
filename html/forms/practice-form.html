@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Practice Form</title>
 </head>
 <body>
 <form action="success.html" method="post">
@@ -10,13 +10,18 @@
     <label>Name:</label>
     <input type="name" name="name">
   </div>
+
   <div>
     <label>Age:</label>
     <input type="age" name="age">
   </div>
+
+  <div>
   	<label>City:</label>
   	<input type="city" name="city">
+  	</div>
   </fieldset>
+
   <fieldset>
   	<div>
   		<label>Gender:</label>
@@ -26,12 +31,47 @@
   			<option value="male">Transgender</option>
 		</select>
   	</div>
+
   	<div>
   		<label>What's your favorite color?</label>
   		<input type="text" name="fav-color" placeholder="Name any color">
   	</div>
+
+  	<div>
+  	<label>Select Country:</label>
+  	<select>
+  	<optgroup label="North America">
+    	<option>USA</option>
+    	<option>Canada</option>
+    	<option>Mexico</option>
+  	</optgroup> 
+  	<optgroup label="Europe">
+    	<option>UK</option>
+    	<option>France</option>
+    	<option>Italy</option>
+  	</optgroup>
+	</select>
+	</div>
+
+	<div>
+	<label>Tell us about yourself:</label>
+		<input type="text" name="self">
+	</div>
   </fieldset>
-  <button type="submit">Log in</button>
+
+  <fieldset>
+  	<div>
+  	<label>Tell us when you're ready to start:</label>
+  	<input type="date" name="date">
+  	</div>
+
+  	<div>
+  	<input type="checkbox" name="cb-agree" vale="agree">
+  	I am not a robot.
+  	</div>
+  </fieldset>
+
+  <button type="submit">Submit</button>
 </form>
 </body>
 </html>
