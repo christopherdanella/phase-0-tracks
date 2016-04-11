@@ -1,0 +1,41 @@
+Helpless Robot in elevator:
+- Face elevator door.
+- Find panel with numerical buttons.
+- Decide which floor you want the elevator to take you to.
+- If you want to go to the 5th floor:
+	- Push the button with the numerical value of 5.
+	- Read floor counter above elevator doors to find out which floor the 		elevator is currently on.
+	- After 5 button is pushed, ride elevator to the 5th floor, wait for doors to 	open, make sure floor counter says “5”.
+	- Exit the elevator.
+
+- If you are not alone in the elevator and someone else is going to a different floor than you:
+	- Do NOT exit the elevator until you’ve reached the floor that corresponds to 	the button you pushed. Again, use the floor counter located above the 		elevator door.
+
+- If you need to ride the elevator back to the ground floor of the building:
+	- Face elevator door.
+	- Find panel with numerical buttons.
+	- Push the button with the lowest numerical value (usually “1”, sometimes “L” 	for Lobby or “G” for Ground).
+	- Ride elevator down until you have reached that floor, check to make sure 		that floor counter corresponds with the value of the button you pushed. wait 	for doors to open, exit elevator.
+
+
+Preparing a Bagel for Breakfast:
+- Remove bagel from packaging.
+- Find a knife from kitchen drawer.
+	- Turn the bagel on it’s side, and slice it in half with knife.
+- Locate toaster.
+	- Place one half of the bagel in one of the two slots of the toaster.
+	- Place other half of the bagel in the remaining open slot of the the 		toaster.
+	- The halves of the bagel should face one another as if they could fit 		together across the two toaster slots.
+	- Locate heat setting knob on toaster, choose setting “8”.
+	- Pull down toaster switch until it catches, make sure it stays down.
+- If you smell burning:
+	- Press the “C” button for cancel.
+	- OR pull the toaster switch back up manually, this will stop the toaster.
+- Otherwise wait for switch to flip back up automatically and listen for “ding” sound to indicate that the bagel is done toasting.
+- Go to refrigerator, open door.
+- Locate Philadelphia Cream Cheese.
+- Remove bagel halves from toaster, place on a plate.
+- Dip your knife in the cream cheese, begin to spread it evenly on each inner half of the bagel.
+- Eat and enjoy delicious bagel. 
+
+
