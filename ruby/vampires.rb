@@ -1,5 +1,9 @@
-puts "How many employees will be processed?"
-num_employees = gets.chomp
+num_employees = ""
+
+until num_employees == 0
+  puts "How many employees will be processed?"
+  num_employees = gets.chomp
+  num_employees = num_employees - 1
 
 puts "What is your name?"
 name = gets.chomp
@@ -21,9 +25,11 @@ insurance_preference = gets.chomp
 
 if real_age == current_year && garlic_preference == "yes" && insurance_preference == "yes"
   puts "Probably not a vampire."
-elsif real_age == current_year && garlic_preference == "no" || insurance_preference == "no"
+elsif (real_age != current_year && garlic_preference == "yes" || insurance_preference == "no") 
   puts "Probably a vampire."
-elsif real_age == current_year && garlic_preference == "no" && insurance_preference == "no"
+elsif (real_age != current_year && garlic_preference == "no" || insurance_preference == "yes")
+  puts "Probably a vampire."
+elsif real_age != current_year && garlic_preference == "no" && insurance_preference == "no"
   puts "Almot certainly a vampire."
 else
   puts "Results inconclusive."
@@ -47,8 +53,9 @@ else
   puts "You have opted out of our insurance."
 end
 
-num_employees = false
+end
 
-until num_employees
-	
+
+
+
 
