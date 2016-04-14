@@ -1,9 +1,5 @@
-num_employees = ""
-
-until num_employees == 0
-  puts "How many employees will be processed?"
-  num_employees = gets.chomp
-  num_employees = num_employees - 1
+puts "How many employees will be processed?"
+num_employees = gets.chomp
 
 puts "What is your name?"
 name = gets.chomp
@@ -53,7 +49,6 @@ else
   puts "You have opted out of our insurance."
 end
 
-end
 
 
 
