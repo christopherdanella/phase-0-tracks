@@ -47,8 +47,6 @@ else
   puts "You have opted out of our insurance."
 end
 
-num_employees = false
 
-until num_employees
 	
 
