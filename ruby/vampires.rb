@@ -1,5 +1,7 @@
+while true
 puts "How many employees will be processed?"
-num_employees = gets.chomp
+input = gets.chomp
+input = input.to_i
 
 puts "What is your name?"
 name = gets.chomp
@@ -49,7 +51,10 @@ else
   puts "You have opted out of our insurance."
 end
 
-
+if input == 0
+  break
+end
+end
 
 
 
