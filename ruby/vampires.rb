@@ -3,6 +3,10 @@ puts "How many employees will be processed?"
 input = gets.chomp
 input = input.to_i
 
+if input == 0
+  break
+end
+
 puts "What is your name?"
 name = gets.chomp
 
@@ -20,15 +24,26 @@ garlic_preference = gets.chomp
 puts "Would you like to enroll in the company's health insurance?"
 insurance_preference = gets.chomp
 
+allergies = ""
+while true
+puts "Please list your any allergies that you have (type 'done' when finished)"
+allergies = gets.chomp
+
+if 
+  allergies == "done"
+  break
+end
+
+end
 
 if real_age == current_year && garlic_preference == "yes" && insurance_preference == "yes"
   puts "Probably not a vampire."
-elsif (real_age != current_year && garlic_preference == "yes" || insurance_preference == "no") 
+elsif (real_age != current_year && garlic_preference == "yes" || insurance_preference == "no" || allergies == "sunshine") 
   puts "Probably a vampire."
-elsif (real_age != current_year && garlic_preference == "no" || insurance_preference == "yes")
+elsif (real_age != current_year && garlic_preference == "no" || insurance_preference == "yes" || allergies == "sunshine")
   puts "Probably a vampire."
-elsif real_age != current_year && garlic_preference == "no" && insurance_preference == "no"
-  puts "Almot certainly a vampire."
+elsif (real_age != current_year && garlic_preference == "no" && insurance_preference == "no")
+  puts "Almost certainly a vampire."
 else
   puts "Results inconclusive."
 end
@@ -51,11 +66,13 @@ else
   puts "You have opted out of our insurance."
 end
 
-if input == 0
+if input == 1
   break
 end
+
 end
 
+puts "Actually, never mind! What do these questions have to do with anything? Let's all be friends."
 
 
 
