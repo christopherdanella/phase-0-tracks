@@ -28,7 +28,7 @@ user_input = {
   :art => art
 }
 
-puts user_input
+p user_input
 
 
 # Give the user opportunity to update a key, no need to loop.
@@ -40,14 +40,62 @@ if answer == "yes"
   new_info = gets.chomp
 elsif answer == "none"
 end
-if new_info == "Name" || new_info == "Age" || new_info == "Number of Children" || new_info == "Decor Theme" || new_info == "Art"
-  puts "Enter #{new_info}:"
+
+if new_info == "Name"
+  puts "Please update #{new_info}:"
   change = gets.chomp
   change.to_sym
-  new_user_input = {
-    :change => change
+  user_input = {
+    :name => change,
+    :age => age,
+    :num_children => children,
+    :decor_theme => decor_theme,
+    :art => art
   }
-  user_input.update(new_user_input)
-end
-puts user_input
+elsif new_info == "Age"
+  puts "Please update #{new_info}:"
+  change = gets.chomp
+  change.to_sym
+  user_input = {
+    :name => name,
+    :age => change,
+    :num_children => children,
+    :decor_theme => decor_theme,
+    :art => art
+  }
+elsif new_info == "Number of Children"
+    puts "Please update #{new_info}:"
+  change = gets.chomp
+  change.to_sym
+  user_input = {
+    :name => name,
+    :age => age,
+    :num_children => change,
+    :decor_theme => decor_theme,
+    :art => art
+  }
+elsif new_info == "Decor Theme"
+  puts "Please update #{new_info}:"
+  change = gets.chomp
+  change.to_sym
+  user_input = {
+    :name => name,
+    :age => age,
+    :num_children => children,
+    :decor_theme => change,
+    :art => art
+  }
+elsif new_info == "Art"
+  puts "Please update #{new_info}:"
+  change = gets.chomp
+  change.to_sym
+  user_input = {
+    :name => name,
+    :age => age,
+    :num_children => children,
+    :decor_theme => decor_theme,
+    :art => change
+  }
+  end
 # Print latest version of the hash and exit the program.
+p user_input
