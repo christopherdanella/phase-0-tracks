@@ -1,39 +1,39 @@
-# class Puppy
-# 
-#   def initialize
-#     puts "Initializing new puppy instance..."
-#   end
-# 
-#   def fetch(toy)
-#     puts "I brought back the #{toy}!"
-#     toy
-#   end
-# 
-#   def speak(integer)
-#     puts "Woof!" * integer
-#     integer
-#   end
-# 
-#   def roll_over
-#     puts "*rolls over*"
-#   end
-# 
-#   def dog_years(age)
-#     age = age * 7
-#   end 
-# 
-#   def shake
-#     puts "*gives paw*"
-#   end
-# 
-# end
-# 
-# lily = Puppy.new
-# lily.fetch("ball")
-# lily.speak(3)
-# lily.roll_over
-# puts lily.dog_years(4)
-# lily.shake
+class Puppy
+
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
+
+  def fetch(toy)
+    puts "I brought back the #{toy}!"
+    toy
+  end
+
+  def speak(integer)
+    puts "Woof!" * integer
+    integer
+  end
+
+  def roll_over
+    puts "*rolls over*"
+  end
+
+  def dog_years(age)
+    age = age * 7
+  end 
+
+  def shake
+    puts "*gives paw*"
+  end
+
+end
+
+lily = Puppy.new
+lily.fetch("ball")
+lily.speak(3)
+lily.roll_over
+puts lily.dog_years(4)
+lily.shake
 
 class Baseball_Player
 
@@ -65,11 +65,19 @@ first_baseman.hit("curveball")
 ball_players = Array.new
 
 
-5.times do 
+50.times do 
   second_baseman = Baseball_Player.new
   ball_players << second_baseman
 end
 p ball_players
+
+ball_players.each do |player|
+  player.catch 
+  player.throw("home")
+  player.hit("fastball")
+end
+
+
 
 
 
