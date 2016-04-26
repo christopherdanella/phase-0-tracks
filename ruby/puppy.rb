@@ -15,3 +15,13 @@
 # Sleep
 # Jump
 # Cuddle
+
+class Puppy
+  duchess = Puppy.new
+  fido = Puppy.new
+  spot = Puppy.new
+  lily = Puppy.new
+p lily.class
+p lily.instance_of?(Puppy)
+# will return true
+end
