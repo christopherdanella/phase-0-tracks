@@ -10,14 +10,14 @@ class Santa
   attr_reader :age, :ethnicity
   attr_accessor :gender
 
-  def initialize(gender, ethnicity)
+  def initialize(gender, ethnicity, age)
     @gender = gender
     @ethnicity = ethnicity
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = age
   end
 
   def speak
-    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    @age = 0
     puts "Ho, ho, ho! Haaaappy holidays!"
   end
 
@@ -41,25 +41,25 @@ class Santa
 
 end
 
-santa = Santa.new("male", "asian")
-santa.speak
-santa.eat_milk_and_cookies("snickerdoodle")
-puts santa.celebrate_birthday(40)
-puts santa.get_mad_at("Rudolph")
-santa.gender = "undefined"
-puts "Santa is an #{santa.gender} gender"
-puts santa.age
-puts santa.ethnicity
+# santa = Santa.new("male", "asian")
+# santa.speak
+# santa.eat_milk_and_cookies("snickerdoodle")
+# puts santa.celebrate_birthday(40)
+# puts santa.get_mad_at("Rudolph")
+# santa.gender = "undefined"
+# puts "Santa is an #{santa.gender} gender"
+# puts santa.age
+# puts santa.ethnicity
 
 # container for santa collection
-# santas = []
-# 
-# # array of possible genders for santas
-# genders = ["male", "female", "transgender", "he-she-it", "N/A"]
-# 
-# #array of possible ethnicities for santas
-# ethnicities = ["black", "white", "aboriginal", "extra-terrestrial"]
-# 
+santas = []
+
+# array of possible genders for santas
+genders = ["male", "female", "transgender", "he-she-it", "N/A"]
+
+#array of possible ethnicities for santas
+ethnicities = ["black", "white", "aboriginal", "extra-terrestrial"]
+
 # puts "Iterating through genders list to add for Santas..."
 # genders.each do |gender|
 #   puts "Adding a gender called #{gender}..."
@@ -72,6 +72,16 @@ puts santa.ethnicity
 #   talk.speak
 # end
 
+
+# create 100 santas using .TIMES LOOP
+# access random genders and ethnicities in our array using .SAMPLE
+# set age to a random number between 0 - 140
+# print each attribute using ATTR_ACCESSOR
+
+100.times do
+  santa_claus = Santa.new(genders.sample, ethnicities.sample, [*0..140].sample)
+  puts "Santa Claus's gender is #{genders.sample}, Santa Claus's ethnicity is #{ethnicities.sample}, and Santa Claus's age is #{[*0..140].sample}"
+end
 
 
 
