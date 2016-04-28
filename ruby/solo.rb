@@ -18,12 +18,12 @@ class Car
 
   def initialize(type, color, year_made)
     @color = color
-    @type = ["Sedan", "SUV", "Convertible", "Truck"]
+    @type = type
     @year_made = year_made
   end
 
   def rev_engine
-    puts "Your #{@type[2]}'s engine is revving! *VROOOOOOM VROOOOOOM*"
+    puts "Your #{@type.sample}'s engine is revving! *VROOOOOOM VROOOOOOM*"
   end
 
   def drive(max_speed)
@@ -47,45 +47,45 @@ end
 
 # Create program
 # array for answers
-cars = []
+# cars = []
 
 # Allow user to create as many instances of the Car class as they want.
-  # PUTS "how many cars would you like to make?"
-  # answer = Car.new gets.chomp_to.i
-until num_cars == 0
-puts "Hello, there. How many cars would you like to make? Type '0' when finished."
-num_cars = gets.chomp
-num_cars.to_i
 
+adding = true
 
-# Ask user for each attribute
-  # PUTS "What type of car would you like? Choose between Sedan, SUV, Convertible, Truck and what color is it?"
-puts "What type of car would you like to make? Choose between Sedan, SUV, Convertible, and Truck."
-type = gets.chomp
-puts "What color would you like your car to be?"
-color = gets.chomp
-puts "What year was your car made?"
-year_made = gets.chomp
-year_made.to_i
+cars = []
+while adding == true
+  puts "Welcome. Would you like to add a car? If not, say 'no'."
+  answer = gets.chomp.downcase
+  if answer != "no"
+    puts "Ok. What kind of car?"
+    type = gets.chomp
+    puts "What color would you like your car to be?"
+    color = gets.chomp.downcase
+    puts "What year was your car made?"
+    year_made = gets.chomp
+    year_made.to_i
 
+    car = Car.new(type, color, year_made)
+    cars.push(car)
+  else 
+    # make sure that we have some cars at all
+    if cars.length > 0
+    # convert answers into right data types
+    # print what the user has inputted
+      puts "Ok then, here are your cars:"
+      cars.each do |car|
+        puts "The color is #{car.color} and the car is a #{car.type} made in #{car.year_made}."
+      end
+    else
+      puts "You have no cars!"
+    end
+  
+    adding = false
+  end
 end
 
-  # convert answer into appropriate data types @type and @color
-  # store this info in an array
-  # PUTS "In which year was your car made?"
-  # @year_made, add answer to array.
 
-num_cars.to_i.times do 
-  car = Car.new(type, color, year_made)
-  cars << car
-  puts "Here are your results: " 
-  puts "Your car is a #{color} #{type}, made in #{year_made}."
-end
-
-# When user says they're done creating instances, loop through array
-# print out the attributes to confirm it was created
-# use a TIMES loop based on the first integer answer provided by the user
-  # puts cars []
 
 
 
