@@ -12,6 +12,8 @@
 
 # end
 
+# create car class with attr_reader and attr_accessor
+# include 3 methods that take two different data types (integer, string)
 class Car
   attr_reader :year_made
   attr_accessor :color, :type, :year_made
@@ -50,7 +52,7 @@ end
 # cars = []
 
 # Allow user to create as many instances of the Car class as they want.
-
+# loop through while user wants to add cars
 adding = true
 
 cars = []
