@@ -1,0 +1,127 @@
+Release 2: Execute SQL Queries
+
+Run a SQL query for each of the following:
+
+1. Display the information in one table (either is fine).
+
+sqlite> SELECT * FROM hospitals;
+1|Arkham Hospital|3000|June 6, 1904
+2|Children's Hospital|10000|January 7, 2002
+3|Springfield General Hospital|750|July 14, 1988
+
+
+2. Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE doctors SET concentration="History and Archaeology" WHERE name="Dr. Indiana Jones";
+sqlite> SELECT * FROM doctors;
+1|Dr. Nick Rivera|Quackology|20|false|3
+2|Dr. Jonathan Crane|Psychiatry|11|false|1
+3|Dr. Blake Downs|Pediatrics|8|false|2
+4|Dr. Julius Hibbert|Family Medicine|24|true|3
+5|Dr. Thomas Elliot|Surgery|18|false|1
+6|Dr. Elmer Hartman|Malpractice|12|true|3
+7|Dr. Cat Black|Pediatrics|7|false|2
+8|Dr. Robotnik|Robotic Surgery|24|true|1
+9|Dr. Indiana Jones|History and Archaeology|42|true|3
+10|Dr. Neo Cortex|Mad Science|25|false|1
+
+3. Display the information in both tables using one query.
+
+sqlite> SELECT * FROM doctors, hospitals WHERE doctors.hospital_id = hospitals.id;
+1|Dr. Nick Rivera|Quackology|20|false|3|3|Springfield General Hospital|750|July 14, 1988
+2|Dr. Jonathan Crane|Psychiatry|11|false|1|1|Arkham Hospital|3000|June 6, 1904
+3|Dr. Blake Downs|Pediatrics|8|false|2|2|Children's Hospital|10000|January 7, 2002
+4|Dr. Julius Hibbert|Family Medicine|24|true|3|3|Springfield General Hospital|750|July 14, 1988
+5|Dr. Thomas Elliot|Surgery|18|false|1|1|Arkham Hospital|3000|June 6, 1904
+6|Dr. Elmer Hartman|Malpractice|12|true|3|3|Springfield General Hospital|750|July 14, 1988
+7|Dr. Cat Black|Pediatrics|7|false|2|2|Children's Hospital|10000|January 7, 2002
+8|Dr. Robotnik|Robotic Surgery|24|true|1|1|Arkham Hospital|3000|June 6, 1904
+9|Dr. Indiana Jones|History and Archaeology|42|true|3|3|Springfield General Hospital|750|July 14, 1988
+10|Dr. Neo Cortex|Mad Science|25|false|1|1|Arkham Hospital|3000|June 6, 1904
+
+4. Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT doctors.name, hospitals.name FROM doctors JOIN hospitals ON doctors.hospital_id = hospitals.id;
+Dr. Nick Rivera|Springfield General Hospital
+Dr. Jonathan Crane|Arkham Hospital
+Dr. Blake Downs|Children's Hospital
+Dr. Julius Hibbert|Springfield General Hospital
+Dr. Thomas Elliot|Arkham Hospital
+Dr. Elmer Hartman|Springfield General Hospital
+Dr. Cat Black|Children's Hospital
+Dr. Robotnik|Arkham Hospital
+Dr. Indiana Jones|Springfield General Hospital
+Dr. Neo Cortex|Arkham Hospital
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM doctors WHERE name="Dr. Thomas Elliot";
+sqlite> SELECT * FROM doctors;
+1|Dr. Nick Rivera|Quackology|20|false|3
+2|Dr. Jonathan Crane|Psychiatry|11|false|1
+3|Dr. Blake Downs|Pediatrics|8|false|2
+4|Dr. Julius Hibbert|Family Medicine|24|true|3
+6|Dr. Elmer Hartman|Malpractice|12|true|3
+7|Dr. Cat Black|Pediatrics|7|false|2
+8|Dr. Robotnik|Robotic Surgery|24|true|1
+9|Dr. Indiana Jones|History and Archaeology|42|true|3
+10|Dr. Neo Cortex|Mad Science|25|false|1
+
+Release 3: Research On Your Own
+
+2. Try a few different joins in your database, and record the commands and the output.
+
+CROSS JOIN:
+sqlite> SELECT CONCENTRATION, YRS_EXP FROM doctors CROSS JOIN hospitals;
+Quackology|20
+Quackology|20
+Quackology|20
+Psychiatry|11
+Psychiatry|11
+Psychiatry|11
+Pediatrics|8
+Pediatrics|8
+Pediatrics|8
+Family Medicine|24
+Family Medicine|24
+Family Medicine|24
+Malpractice|12
+Malpractice|12
+Malpractice|12
+Pediatrics|7
+Pediatrics|7
+Pediatrics|7
+Robotic Surgery|24
+Robotic Surgery|24
+Robotic Surgery|24
+History and Archaeology|42
+History and Archaeology|42
+History and Archaeology|42
+Mad Science|25
+Mad Science|25
+Mad Science|25
+
+OUTER JOIN:
+sqlite> SELECT YRS_EXP, RETIRED FROM doctors LEFT OUTER JOIN hospitals ON doctors.hospital_id = hospitals.id;
+20|false
+11|false
+8|false
+24|true
+12|true
+7|false
+24|true
+42|true
+25|false
+
+NATURAL LEFT OUTER JOIN:
+sqlite> SELECT NAME FROM doctors NATURAL LEFT OUTER JOIN hospitals;
+Dr. Nick Rivera
+Dr. Jonathan Crane
+Dr. Blake Downs
+Dr. Julius Hibbert
+Dr. Elmer Hartman
+Dr. Cat Black
+Dr. Robotnik
+Dr. Indiana Jones
+Dr. Neo Cortex
+
