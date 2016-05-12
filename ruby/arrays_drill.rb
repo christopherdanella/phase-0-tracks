@@ -1,3 +1,22 @@
+def build_array(par1, par2, par3)
+arr = [par1, par2, par3]
+arr
+end
+
+p build_array("Dog", "Cat", true)
+
+
+def item_adder(arr, item)
+  arr = arr << item
+  arr
+end
+
+p item_adder([], "a")
+p item_adder(["Bushwick", 1988, "DBC"], 3)
+p item_adder(["NYC", false, 2016, "PA"], "USA")
+
+
+
 new_array = []
 p new_array
 
