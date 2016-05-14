@@ -1,4 +1,4 @@
-library = {
+bookstore = {
   fiction: {
     book_info: {
       total_books: 750,
@@ -42,5 +42,14 @@ library = {
     bestselling_authors: []
   }
 }
+
+p bookstore[:travel][:book_info]
+p bookstore[:non_fiction][:bestselling_authors].reverse
+bookstore[:travel][:bestselling_authors].push("Bill Bryson")
+p bookstore[:travel][:bestselling_authors]
+bookstore[:fiction][:bestselling_authors][2] = "George R.R. Martin"
+p bookstore[:fiction][:bestselling_authors]
+
+
 
 
