@@ -23,39 +23,67 @@ consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q",
 # create method called name_generator
 # add parameter called (name)
 
-# def name_generator(name)
-#   # use .downcase to make sure all letters are lowercase 
-#   # reverse the name so last name appears first
-#   name.downcase.split('').reverse!
-# end
-# 
-# p name_generator("Felicia Torres")
+def name_generator(name)
+  # use .downcase to make sure all letters are lowercase 
+  # reverse the name so last name appears first
+  name.downcase.split('').reverse!
+end
+
+p name_generator("Felicia Torres")
 
 def next_vowel(string)
 # create a vowels variable containing letters "aeiou"
-vowels = "aeiou"
+  vowels = "aeiou"
 
 # create a hash with vowels and their next counterpart
-conversions = {"a" => "e", "e" => "i", "i" => "o", "o" => "u", "u" => "a"}
+  conversions = {"a" => "e", "e" => "i", "i" => "o", "o" => "u", "u" => "a"}
 
 # create a letter variable and set to string.SPLIT
-letters = string.split('')
+  letters = string.split('')
 
 # create a new vowel variable and set it to an empty string
-new_vowel = ""
+  new_vowel = ""
 
 #loop through the array of letters
-letters.each do |letter|
+  letters.each do |letter|
   #if the letter is a vowel, replace it with the next vowel
   #in the sequence
-  if vowels.include?(letter)
-    new_vowel += conversions[letter]
-  else
+    if vowels.include?(letter)
+      new_vowel += conversions[letter]
+    else
   # if it's not a vowel, put it in the letter variable
-    new_vowel += letter
-  end
-  end
-new_vowel
+      new_vowel += letter
+    end
+    end
+  new_vowel
 end
 puts next_vowel("abcdefiou")
+
+def next_consonant(string)
+  consonants = "bcdfghjklmnpqrstvwxyz"
+
+  consonant_conversions = {
+    "b" => "c", "c" => "d", "d" => "f", "f" => "g", 
+    "g" => "h", "h" => "j", "j" => "k", "k" => "l",
+    "l" => "m", "m" => "n", "n" => "p", "p" => "q",
+    "q" => "r", "r" => "s", "s" => "t", "t" => "v",
+    "v" => "w", "w" => "x", "x" => "y", "y" => "z",
+    "z" => "b"}
+
+  letters_cons = string.split('')
+
+  new_consonant = ""
+
+  letters_cons.each do |convert|
+    if consonants.include?(convert)
+      new_consonant += consonant_conversions[convert]
+    else
+      new_consonant += convert
+    end
+  end
+  new_consonant
+end
+
+puts next_consonant("bcdfghijz")
+
 
