@@ -1,40 +1,40 @@
-# class Puppy
-# 
-#   def initialize
-#     puts "Initializing new puppy instance..."
-#   end
-# 
-#   def fetch(toy)
-#     puts "I brought back the #{toy}!"
-#     toy
-#   end
-# 
-#   def speak(integer)
-#     puts "Woof " * integer
-#     integer
-#   end
-# 
-#   def roll_over
-#     "*rolls over*"
-#   end
-# 
-#   def dog_years(age)
-#     dog_years = age * 7
-#   end
-# 
-# 
-#   def play_dead
-#     "*plays dead*"
-#   end
-# 
-# end
-# 
-# puppy = Puppy.new
-# p puppy.fetch("ball")
-# p puppy.speak(3)
-# p puppy.roll_over
-# p puppy.dog_years(4)
-# p puppy.play_dead
+class Puppy
+
+  def initialize
+    puts "Initializing new puppy instance..."
+  end
+
+  def fetch(toy)
+    puts "I brought back the #{toy}!"
+    toy
+  end
+
+  def speak(integer)
+    puts "Woof " * integer
+    integer
+  end
+
+  def roll_over
+    "*rolls over*"
+  end
+
+  def dog_years(age)
+    dog_years = age * 7
+  end
+
+
+  def play_dead
+    "*plays dead*"
+  end
+
+end
+
+puppy = Puppy.new
+p puppy.fetch("ball")
+p puppy.speak(3)
+p puppy.roll_over
+p puppy.dog_years(4)
+p puppy.play_dead
 
 
 class Bike
@@ -70,4 +70,18 @@ panasonic = Bike.new
 panasonic.pedal(25)
 panasonic.turn("left")
 panasonic.worth(1986)
+
+array_of_bikes = []
+
+50.times do bike = Bike.new
+  array_of_bikes << bike
+end
+
+array_of_bikes.each do |bicycles|
+  bicycles.pedal(rand(22))
+  bicycles.turn("right")
+  bicycles.worth(2003)
+end
+
+
 
