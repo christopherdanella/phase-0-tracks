@@ -1,6 +1,6 @@
 class Santa
-  attr_reader :ethnicity, :age
-  attr_accessor :gender
+  attr_reader :age
+  attr_accessor :gender, :ethnicity
 
   def initialize(gender, ethnicity, age)
     puts "Initializing Santa instance..."
@@ -45,7 +45,7 @@ possible_genders = ["male", "female", "transgender", "he-she-it", "N/A"]
 possible_ethnicities = ["black", "brown", "orange", "Asian", "Russian", "Native American"]
 
 
-100.times do santa = Santa.new(possible_genders.sample, possible_ethnicities.sample, [*1..140].sample)
+10.times do santa = Santa.new(possible_genders.sample, possible_ethnicities.sample, [*1..140].sample)
   puts "Santa Claus's gender is #{possible_genders.sample}, Santa's ethnicity is #{possible_ethnicities.sample}, and Santa's age is #{[*1..140].sample}"
 end
 
