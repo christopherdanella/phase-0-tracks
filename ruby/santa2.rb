@@ -2,7 +2,7 @@ class Santa
   attr_reader :ethnicity, :age
   attr_accessor :gender
 
-  def initialize(gender, ethnicity)
+  def initialize(gender, ethnicity, age)
     puts "Initializing Santa instance..."
     @gender = gender
     @ethnicity = ethnicity
@@ -30,21 +30,26 @@ class Santa
 
 end
 
-santa = Santa.new("male", "red")
-santa.speak
-santa.milk_and_cookies("oreo")
-p santa.celebrate_birthday
-p santa.get_mad_at("Vixen")
-santa.gender = "Extra Terrestrial"
-puts "Santa is now an #{santa.gender}."
-p santa.age
-p santa.ethnicity
+# santa = Santa.new("male", "red")
+# santa.speak
+# santa.milk_and_cookies("oreo")
+# p santa.celebrate_birthday
+# p santa.get_mad_at("Vixen")
+# santa.gender = "Extra Terrestrial"
+# puts "Santa is now an #{santa.gender}."
+# p santa.age
+# p santa.ethnicity
 
-# santas = []
-# possible_genders = ["male", "female", "transgender", "he-she-it"]
-# possible_ethnicities = ["black", "brown", "orange", "Asian"]
-# 
-# possible_genders.length.times do |i|
-#   santas << Santa.new(possible_genders.sample, possible_ethnicities.sample)
-# end
-# p santas
+santas = []
+possible_genders = ["male", "female", "transgender", "he-she-it", "N/A"]
+possible_ethnicities = ["black", "brown", "orange", "Asian", "Russian", "Native American"]
+
+
+100.times do santa = Santa.new(possible_genders.sample, possible_ethnicities.sample, [*1..140].sample)
+  puts "Santa Claus's gender is #{possible_genders.sample}, Santa's ethnicity is #{possible_ethnicities.sample}, and Santa's age is #{[*1..140].sample}"
+end
+
+
+
+
+
