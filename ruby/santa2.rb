@@ -1,4 +1,6 @@
 class Santa
+  attr_reader :ethnicity, :age
+  attr_accessor :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance..."
@@ -26,21 +28,6 @@ class Santa
     @reindeer_ranking << reindeer_name
   end
 
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
-
-  def gender
-    @gender
-  end
 end
 
 santa = Santa.new("male", "red")
