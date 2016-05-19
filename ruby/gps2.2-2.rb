@@ -116,7 +116,7 @@ print_list(list)
 # The importance of pseudocoding was really solidified for me in this challenge. It's something that I plan
 # to use as often as possible moving forward. I'd still like more practice with iterating on arrays and hashes
 # and manipulating information contained in those data structures. The concepts
-# of implict and explicit return were also solidified today. Chris
+# of implict and explicit return were also solidified today. 
 
 
 
