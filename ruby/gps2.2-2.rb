@@ -84,3 +84,39 @@ print_list(list)
 
 
 
+# REFLECTION
+
+# What did you learn about pseudocode from working on this challenge?
+# I learned that pseudocode is an excellent way to provide yourself a roadmap
+# when working through a problem. Typing out your process in plain English is very
+# helpful to keep you on track and give you pointers while coding.
+
+# What are the tradeoffs of using arrays and hashes for this challenge?
+# It's useful to store the initial input into an array since it's a series of strings and 
+# and then convert the array to a hash since there are keys and values involved. Ultimately,
+# we found the hash to be a bit more useful since there is a key and a value within the 
+# grocery list.
+
+
+# What does a method return?
+# A method returns the last value in the statement of the method. 
+# I learned a good bit about implicit vs explicit returns in this GPS.
+# Using the word RETURN is not necessary if you just make sure that the value
+# you want to return is the last statement of the method.
+
+# What kind of things can you pass into methods as arguments?
+# Strings, integers, basically anything you like as long as what you are passing into the method equals
+# the number of arguments required by the method.
+
+# How can you pass information between methods?
+# You can pass information between methods by calling the method with the information you'd like to pass 
+# to the new method.
+
+# What concepts were solidified in this challenge, and what concepts are still confusing?
+# The importance of pseudocoding was really solidified for me in this challenge. It's something that I plan
+# to use as often as possible moving forward. I'd still like more practice with iterating on arrays and hashes
+# and manipulating information contained in those data structures. The concepts
+# of implict and explicit return were also solidified today.
+
+
+
