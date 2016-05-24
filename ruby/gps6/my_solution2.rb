@@ -94,9 +94,37 @@ end
 # Reflection Section
 
 
+# What are the differences between the two different hash syntaxes shown in the state_data file?
+  # The outer hash (STATE_DATA) consists of a string of each state name and a hash rocket pointing to the inner
+  # hash which contains the values of population and population_density as symbols, both as integers.
+
+# What does require_relative do? How is it different from require?
+  # require_relative takes the data from another file within the same directory and allows your
+  # program to access it.
+
+  # it's different from require because it's looking in the same directory as the file 
+  # where it's being declared. require searches the entire library, rather than a specific directory.
+
+# What are some ways to iterate through a hash?
+  # You can use a .each do loop with a block to iterate through a hash.
+  # You can also use .map to iterate through a hash and update the information within that hash.
+
+# When refactoring virus_effects, what stood out to you about the variables, if anything?
+  # We didn't need the parameters within the method itself, nor did we need the instance variables
+  # in order for the program to work properly. The instance variables were being kicked off via
+  # the initalize method and put to work in both of the private methods.
+
+
+# What concept did you most solidify in this challenge?
+  # I learned what a constant variable is and how it's different from a global variable. 
+  # I also learned that you wouldn't want to use a method to update the information within
+  # a constant variable and that if you tried that Ruby would warn you of what you're about 
+  # to do. Understanding the differences between types of variables, as well as private methods
+  # vs. public methods was also helpful for me in this challenge, however, I still feel like
+  # I need further clarification about the reason behind using a private method.
 
 
 
 
-#population density is number of people per square mile as of 2012
-#this data is updated every year with estimates from a 10 year census
+
+
