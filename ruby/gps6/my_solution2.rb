@@ -1,29 +1,41 @@
 # Virus Predictor
 
-# I worked on this challenge [by myself, with: ].
-# We spent [#] hours on this challenge.
+# I worked on this challenge [with: Adam Baxter].
+# We spent 1.5 hours on this challenge.
 
 # EXPLANATION OF require_relative
-#
-#
+# require_relative is accessing a file within the same working directory for the purposes of using methods or data outside the specific file. 
+# require is used to access another ruby library, but not one that is within the working directory.
+
 require_relative 'state_data'
+
+# population density is number of people per square mile as of 2012
+# this data is updated every year with estimates from a 10 year census
 
 class VirusPredictor
 
+  # accepting three arguments and assigning instance variables
   def initialize(state_of_origin, population_density, population)
     @state = state_of_origin
     @population = population
     @population_density = population_density
   end
 
+  # a method which does not take an parameters. It is running both     predicted_deaths and speed_of spread methods.
+  
+  
   def virus_effects
-    predicted_deaths(@population_density, @population, @state)
-    speed_of_spread(@population_density, @state)
+    predicted_deaths 
+    speed_of_spread 
   end
 
   private
-
-  def predicted_deaths(population_density, population, state)
+  
+  # private method that takes 3 parameters as arguments, uses control flow
+  # to calculate the percentage of deaths that each state will experience
+  # based on population density. prints the result as the return value.
+  
+  def predicted_deaths
     # predicted deaths is solely based on population density
     if @population_density >= 200
       number_of_deaths = (@population * 0.4).floor
@@ -41,11 +53,14 @@ class VirusPredictor
 
   end
 
-  def speed_of_spread(population_density, state) #in months
+  # private method that takes two parameters as arguments, uses control flow
+  # to calculate the speed of the virus spread based on population density. the
+  # more dense the population is per state, the faster the virus will spread.
+  # returns a string that is added on to the return value of the previous        method.
+  def speed_of_spread #in months
     # We are still perfecting our formula here. The speed is also affected
     # by additional factors we haven't added into this functionality.
     speed = 0.0
-
     if @population_density >= 200
       speed += 0.5
     elsif @population_density >= 150
@@ -69,19 +84,19 @@ end
 # DRIVER CODE
  # initialize VirusPredictor for each state
 
-
-alabama = VirusPredictor.new("Alabama", STATE_DATA["Alabama"][:population_density], STATE_DATA["Alabama"][:population])
-alabama.virus_effects
-
-jersey = VirusPredictor.new("New Jersey", STATE_DATA["New Jersey"][:population_density], STATE_DATA["New Jersey"][:population])
-jersey.virus_effects
-
-california = VirusPredictor.new("California", STATE_DATA["California"][:population_density], STATE_DATA["California"][:population])
-california.virus_effects
-
-alaska = VirusPredictor.new("Alaska", STATE_DATA["Alaska"][:population_density], STATE_DATA["Alaska"][:population])
-alaska.virus_effects
+STATE_DATA.each do |state, pop_density|
+  state = VirusPredictor.new(state, pop_density[:population_density],   pop_density[:population])
+  state.virus_effects
+end
 
 
 #=======================================================================
 # Reflection Section
+
+
+
+
+
+
+#population density is number of people per square mile as of 2012
+#this data is updated every year with estimates from a 10 year census
