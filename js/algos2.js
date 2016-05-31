@@ -53,6 +53,52 @@ function matchFinder(objectOne, objectTwo) {
   }
 }
 
+// Release 2: Generate Random Test Data
+
+// PSEUDOCODE
+  // write function randomData and give it a number as a parameter.
+  // add two more variables, randomArray as an empty array
+  // randomLetters will be an array of all of the letters of the alphabet
+  // loop through the parameter of the function 
+  // set new variable called randomNumber and use Math.random to generate a random number
+  // use Math.round to make sure that the number is rounded down from a float to a whole number.
+  // declare another variable and set it equal to an empty string.
+  // loop through the randomNumber variable, set the index equal to something other than "i"
+  // push the empty string variable to our randomArray and return randomArray
+  // print it to the console so the user sees the 10 arrays that have been generated.
+
+
+function randomData(number) {
+  var randomArray = [];
+  var randomLetters = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q",
+  "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+  for (var i = 0; i < number; i++) {
+    var randomNumber = Math.round(Math.random() * 10) + 1;
+    var word = "";
+    for (var j = 0; j < randomNumber; j++) {
+      word = word + randomLetters[j]
+    }
+    randomArray.push(word)
+  }
+  console.log(randomArray)
+  return randomArray
+}
+
+
+// DRIVER CODE
+
+// console.log(longest_word(["Lily", "Harpua", "Batman"]))
+// console.log(longest_word(["Bushwick", "Philadelphia", "Boston"]))
+// console.log(longest_word(["Odessa Mama", "LeBron James", "Christopher Danella", "James Bond"]))
+// 
+// 
+// 
+// match_finder({name: "Chris", age: 27}, {name: "Bud", age: 27})
+// match_finder({name: "Dom", hair: "blond"}, {name: "Andy", hair: "red"})
+
+
+console.log(longestWord(randomData(10)))
+
 
 
 
