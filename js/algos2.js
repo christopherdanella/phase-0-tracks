@@ -23,3 +23,36 @@
     return longest;
   }
 
+// Release 1: Find a Key-Value Match
+
+// PSEUDOCODE
+  // name function match_finder using objectOne and objectTwo as parameters
+  // create a variable called "key" and loop through objectOne
+  // use hasOwnProperty function in javascript to loop through parameters
+  // and figure out if there is a match in the keys.
+  // use conditional IF statement to see if objectOne and objectTwo have keys
+  // that are equal to each other
+  // IF there is a match, print true
+  // ELSE print false
+
+
+
+function matchFinder(objectOne, objectTwo) {
+  for (var key in objectOne) {
+    if (objectTwo.hasOwnProperty(key)) {
+      if (objectOne[key] === objectTwo[key]) {
+        var match = objectOne[key];
+      }
+    }
+  }
+
+  if (match) {
+    console.log("True " + match);
+  } else { 
+    console.log("False, no matches found.")
+  }
+}
+
+
+
+
