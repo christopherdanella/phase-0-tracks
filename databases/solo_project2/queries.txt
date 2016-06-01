@@ -75,8 +75,65 @@ SELECT * FROM countries;
 9|France|66000000|French|1789-07-14|3
 10|Russia|143000000|Russian|1991-12-25|3
 
+Release 3: Research On Your Own
 
+Try a few different joins in your database, and record the commands and the output in queries.txt.
 
+OUTER JOIN:
+SELECT POPULATION, LANGUAGE FROM countries LEFT OUTER JOIN continents ON countries.continent_id = continents.id;
 
+319000000|American English
+35000000|English/French
+200000000|Portuguese
+17000000|Spanish
+30000000|Spanish
+48000000|Spanish
+53000000|British English
+66000000|French
+143000000|Russian
+
+NATURAL LEFT OUTER JOIN:
+SELECT NAME FROM countries NATURAL LEFT OUTER JOIN continents;
+
+USA
+Canada
+Brazil
+Chile
+Peru
+Colombia
+England
+France
+Russia
+
+CROSS JOIN:
+SELECT LANGUAGE, ESTABLISHED FROM countries CROSS JOIN continents;
+
+American English|1776-07-04
+American English|1776-07-04
+American English|1776-07-04
+English/French|1867-07-01
+English/French|1867-07-01
+English/French|1867-07-01
+Portuguese|1822-09-07
+Portuguese|1822-09-07
+Portuguese|1822-09-07
+Spanish|1810-09-18
+Spanish|1810-09-18
+Spanish|1810-09-18
+Spanish|1821-07-28
+Spanish|1821-07-28
+Spanish|1821-07-28
+Spanish|1810-07-20
+Spanish|1810-07-20
+Spanish|1810-07-20
+British English|1707-05-01
+British English|1707-05-01
+British English|1707-05-01
+French|1789-07-14
+French|1789-07-14
+French|1789-07-14
+Russian|1991-12-25
+Russian|1991-12-25
+Russian|1991-12-25
 
 
