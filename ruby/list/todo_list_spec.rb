@@ -1,4 +1,4 @@
-vrequire_relavitve 'todolist'
+require_relative 'todo_list2'
 describe TodoList do
   let(:list) { TodoList.new(["do the dishes", "mow the lawn"]) }
 
