@@ -18,3 +18,11 @@ Three Diamond Door Bar|Dave|Davis|3|Fun atmosphere, but it gets crowded
 Miles|Wyatt|Calderone|4|Super low key, good prices
 Forrest Point|Canelo|Fritz|5|Good food, drinks, awesome patio!
 The Johnsons|Big|Cat|1|Way too crowded
+
+4. How do you view the data of all three tables for just one particular business? 
+SELECT businesses.name, users.first_name, users.last_name, reviews.stars, 
+reviews.comment FROM reviews JOIN businesses ON reviews.business_id = businesses.id JOIN users ON reviews.user_id = users.id WHERE businesses.name="The Johnsons";
+
+The Johnsons|Big|Cat|1|Way too crowded
+
+
