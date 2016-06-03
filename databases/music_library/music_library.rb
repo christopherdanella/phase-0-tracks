@@ -38,6 +38,16 @@ def update_rating(db, rating, song)
   db.execute("UPDATE music SET rating=(?) WHERE song=(?)", [rating, song])
 end
 
+# write a method that displays library by rating
+def display_by_rating(db)
+  db.execute("SELECT * FROM music ORDER BY rating DESC")
+end
+
+#write a method that displays music by artist
+def display_by_artist(db)
+  db.execute("SELECT * FROM music ORDER BY artist ASC")
+end
+
 # write a method to print the whole music library
 def print_library(db)
   music_library = db.execute("SELECT * FROM music")
@@ -46,6 +56,6 @@ def print_library(db)
   end
 end
 
-print_library(db)
+
 
 
