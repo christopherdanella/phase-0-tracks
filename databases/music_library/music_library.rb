@@ -6,6 +6,7 @@ require 'sqlite3'
 # create SQLite3 Database
 db = SQLite3::Database.new("library.db")
 
+
 # fancy string delimiters
 create_table_cmd = <<-SQL
   CREATE TABLE IF NOT EXISTS music(
@@ -13,15 +14,39 @@ create_table_cmd = <<-SQL
     artist VARCHAR(255),
     song VARCHAR(255),
     rating INT,
-    explicit_lyrics BOOLEAN
+    explicit_lyrics BOOLEAN,
+    user_id INT,
+    platform_id INT
+  )
+SQL
+
+create_users_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS users(
+    id INTEGER PRIMARY KEY,
+    user_name VARCHAR(255)
+  )
+SQL
+
+create_platform_table_cmd = <<-SQL
+  CREATE TABLE IF NOT EXISTS platform(
+    id INTEGER PRIMARY KEY,
+    platform_name VARCHAR(255)
   )
 SQL
 
 # create music table, if it doesn't exist already
 db.execute(create_table_cmd)
+db.execute(create_users_table_cmd)
+db.execute(create_platform_table_cmd)
 
 # add a test artist, song, etc
-# db.execute("INSERT INTO music (artist, song, rating, explicit_lyrics) VALUES ('Ghostface Killah', 'The Champ', 4, 'true')")
+# db.execute("INSERT INTO music (artist, song, rating, explicit_lyrics, user_id, platform_id) VALUES ('Ghostface Killah', 'The Champ', 4, 'true', 1, 1)")
+
+# add a test user
+# db.execute("INSERT INTO users (user_name) VALUES ('Chris')")
+
+# add a test platform
+# db.execute("INSERT INTO platform (platform_name) VALUES ('iTunes')")
 
 # write a method to add a song
 def add_song(db, artist, song, rating, explicit_lyrics)
@@ -52,10 +77,33 @@ end
 def print_library(db)
   music_library = db.execute("SELECT * FROM music")
   music_library.each do |music|
-    p "#{music[1]} - #{music[2]}, with a rating of #{music[3]}, explicit lyrics present: #{music[4]}"
+    p "#{music[1]} - #{music[2]}, rating = #{music[3]} stars, explicit lyrics present: #{music[4]}, played by user: #{music[5]} on platform: #{music[6]}"
   end
 end
 
-
-
+# USER INTERFACE
+# loop do
+# puts "Greetings, welcome to your music library creator."
+# puts "We're going to begin building your music library."
+# puts "To begin, press any key or type 'done' if/when finished"
+# user_response = gets.chomp
+# break if user_response == 'done'
+# puts "Please enter an artist name:"
+# artist = gets.chomp
+# puts "Please enter the song title by said artist:"
+# song = gets.chomp
+# puts "Please enter a rating for the song on a scale of 1-5:"
+# rating = gets.chomp
+# puts "Does this song have explicit lyrics? (true/false)"
+# explicit_lyrics = gets.chomp
+#   until explicit_lyrics == "true" || explicit_lyrics == "false"
+#     puts "Incorrect answer choice"
+#     puts "Please type 'true' or 'false'"
+#     explicit_lyrics = gets.chomp
+#   end
+#   add_song(db, artist, song, rating, explicit_lyrics)
+# end
+# 
+# 
+# print_library(db)
 
