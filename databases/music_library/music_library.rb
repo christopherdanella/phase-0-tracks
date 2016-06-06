@@ -49,8 +49,8 @@ db.execute(create_platform_table_cmd)
 # db.execute("INSERT INTO platform (platform_name) VALUES ('iTunes')")
 
 # write a method to add a song
-def add_song(db, artist, song, rating, explicit_lyrics)
-  db.execute("INSERT INTO music (artist, song, rating, explicit_lyrics) VALUES (?, ?, ?, ?)", [artist, song, rating, explicit_lyrics])
+def add_song(db, artist, song, rating, explicit_lyrics, user_id, platform_id)
+  db.execute("INSERT INTO music (artist, song, rating, explicit_lyrics, user_id, platform_id) VALUES (?, ?, ?, ?, ?, ?)", [artist, song, rating, explicit_lyrics, user_id, platform_id])
 end
 
 # write a method to delete a song
@@ -73,6 +73,16 @@ def display_by_artist(db)
   db.execute("SELECT * FROM music ORDER BY artist ASC")
 end
 
+# write a method to add a user to the database
+def add_user(db, user_name)
+  db.execute("INSERT INTO users (user_name) VALUES (?)," [user_name])
+end
+
+# write a method that adds a platform to the database
+def add_platform(db, platform_name)
+  db.execute("INSERT INTO platform (platform_name) VALUES (?)," [platform_name])
+end
+
 # write a method to print the whole music library
 def print_library(db)
   music_library = db.execute("SELECT * FROM music")
@@ -81,29 +91,42 @@ def print_library(db)
   end
 end
 
+# write a method that joins the three tables
+def join_tables(db)
+  db.execute("SELECT users.user_name, platform.platform_name, music.artist, music.song, music.explicit_lyrics FROM music JOIN users ON music.user_id = users.id JOIN platform ON music.platform_id = platform.id")
+end
+
 # USER INTERFACE
-# loop do
-# puts "Greetings, welcome to your music library creator."
-# puts "We're going to begin building your music library."
-# puts "To begin, press any key or type 'done' if/when finished"
-# user_response = gets.chomp
-# break if user_response == 'done'
-# puts "Please enter an artist name:"
-# artist = gets.chomp
-# puts "Please enter the song title by said artist:"
-# song = gets.chomp
-# puts "Please enter a rating for the song on a scale of 1-5:"
-# rating = gets.chomp
-# puts "Does this song have explicit lyrics? (true/false)"
-# explicit_lyrics = gets.chomp
-#   until explicit_lyrics == "true" || explicit_lyrics == "false"
-#     puts "Incorrect answer choice"
-#     puts "Please type 'true' or 'false'"
-#     explicit_lyrics = gets.chomp
-#   end
-#   add_song(db, artist, song, rating, explicit_lyrics)
-# end
-# 
-# 
-# print_library(db)
+loop do
+puts "Greetings, welcome to your music library creator."
+puts "We're going to begin building your music library."
+puts "To begin, press any key or type 'done' if/when finished"
+user_response = gets.chomp
+break if user_response == 'done'
+puts "Please enter your name:"
+user_name = gets.chomp
+puts "Please enter an artist name:"
+artist = gets.chomp
+puts "Please enter the song title by said artist:"
+song = gets.chomp
+puts "Please enter a rating for the song on a scale of 1-5:"
+rating = gets.chomp
+puts "Does this song have explicit lyrics? (true/false)"
+explicit_lyrics = gets.chomp
+  until explicit_lyrics == "true" || explicit_lyrics == "false"
+    puts "Incorrect answer choice"
+    puts "Please type 'true' or 'false'"
+    explicit_lyrics = gets.chomp
+  end
+puts "Please enter the platform you'd like to use to play your music:"
+platform_name = gets.chomp
+  add_song(db, artist, song, rating, explicit_lyrics, user_name, platform_name)
+end
+
+
+print_library(db)
+
+
+
+
 
