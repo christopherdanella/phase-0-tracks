@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="style.css" type="text/css">
+  <title>Practice Page for jQuery!</title>
+</head>
+<body>
+  <img id="tahoe" src="images/heavenly.jpg" alt="Heavenly, Lake Tahoe">
+  <div class="buttons">
+    <button id=button1 type="button">Click me!</button>
+    <button id=button2 type="button">Click me!</button>
+    <button id=button3 type="button">Click me!</button>
+    <button id=button4 type="button">Click me!</button>
+  </div>
+  <div class="blurbs">
+    <p id=blurb1>Shred!</p>
+    <p id=blurb2>Gnarly!</p>
+    <p id=blurb3>Sick brah!</p>
+    <p id=blurb4>T-t-t-tight!</p>
+  </div>
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    $(function() {
+
+      $("#button1").on("click", function() {
+      $("#blurb1").toggle(1000);
+      });
+
+      $("#button2").on("click", function() {
+      $("#tahoe").toggle(300);
+      });
+
+      $("#button3").on("click", function() {
+      $("#blurb4").css({color: 'blue', fontWeight: 'bold', fontSize: '3.4em'});
+      });
+
+    });
+  </script>
+</body>
+</html>
