@@ -1,0 +1,29 @@
+body {
+  background-color: yellow;
+  width: 1024px;
+  margin: auto;
+}
+
+.buttons {
+  display: inline;
+}
+
+#button1 {
+  position: relative;
+  left: 100px;
+}
+
+#button2 {
+  position: relative;
+  left: 250px;
+}
+
+#button3 {
+  position: relative;
+  left: 400px;
+}
+
+#button4 {
+  position: relative;
+  left: 550px;
+}
