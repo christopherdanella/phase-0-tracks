@@ -18,5 +18,23 @@
     <p id=blurb3>Sick brah!</p>
     <p id=blurb4>T-t-t-tight!</p>
   </div>
+  <script src="jquery-1.12.4.min.js"></script>
+  <script>
+    $(function() {
+
+      $("#button1").on("click", function() {
+      $("#blurb1").toggle(1000);
+      });
+
+      $("#button2").on("click", function() {
+      $("#tahoe").toggle(300);
+      });
+
+      $("#button3").on("click", function() {
+      $("#blurb4").css({color: 'blue', fontWeight: 'bold', fontSize: '3.4em'});
+      });
+
+    });
+  </script>
 </body>
 </html>
