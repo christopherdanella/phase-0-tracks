@@ -54,4 +54,34 @@ get '/contact/:address' do
   "The address is: #{params[:address]}"
 end
 
+# write a GET route for great job
+
+get '/great_job' do
+  name = params[:name]
+  if name
+    "Great job #{name}!"
+  else
+    "Great job!"
+  end
+end
+
+# write a GET route to add two numbers
+
+get '/add/:num_one/:num_two' do
+  num_one = params[:num_one].to_i
+  num_two = params[:num_two].to_i
+  answer = num_one + num_two
+  "Answer is: #{answer}"
+end
+
+# write a GET to search the database
+
+get '/students/search/:campus' do
+  search = db.execute("SELECT * FROM students WHERE campus=?", [params[:campus]])
+  search.to_s
+end
+
+
+
+
 
