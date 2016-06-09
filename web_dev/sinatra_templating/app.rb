@@ -25,3 +25,11 @@ post '/students' do
 end
 
 # add static resources
+
+get '/campus' do
+  @students = db.execute("SELECT name, campus FROM students")
+  erb :campus
+end
+
+
+

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DBC Campuses</title>
+</head>
+<body>
+<p>DBC Students and their Campus</p>
+  <ul>
+    <% @students.each do |campus| %>
+      <li><%= campus['name'] %>, <%= campus['campus'] %></li>
+    <% end %>
+  </ul>
+</body>
+</html>
